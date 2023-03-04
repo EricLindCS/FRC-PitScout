@@ -17,35 +17,35 @@
 
       <h3>Mechanical Info</h3>
       <label for="Drive">Team Drive?</label>
-      <select id="cars" name="cars">
+      <select id="drive" name="drive">
         <option value="Swerve">Swerve</option>
         <option value="6 Wheel">6 Wheel</option>
         <option value="4 Wheel">4 Wheel</option>
       </select> <br>
-      <label for="Team Name">Claw System?</label>
-      <input type="text" id="name" name="name"><br>
+      <label for="Claw System">Claw System?</label>
+      <input type="text" id="claw" name="claw"><br>
       <label for="Team #">Placement System? (Vertical Elevator, Horiz. Elevator, Catapult, etc.)</label>
-      <input type="text" id="num" name="num"><br>
+      <input type="text" id="elevator" name="elevator"><br>
 
       <h3>Auton</h3>
       <label for="Drive">Has Auton?</label>
-        <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+        <input type="checkbox" id="adrive" name="adrive" value="y">
      <br>
 
-     <label for="Drive">Move Bonus?</label>
-        <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+     <label for="ADrive">Move Bonus?</label>
+        <input type="checkbox" id="leave" name="leave" value="y">
      <br>
      
-      <label for="Drive">Score Objects?</label>
-      <select id="cars"wd name="cars">
+      <label for="AScore">Score Objects?</label>
+      <select id="score"wd name="score">
         <option value="Swerve">0</option>
         <option value="6 Wheel">1</option>
         <option value="4 Wheel">2</option>
         <option value="4 Wheel">3</option>
       </select><br>
 
-      <label for="Drive">Can Autopark?</label>
-      <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+      <label for="APark">Can Autopark?</label>
+      <input type="checkbox" id="apark" name="apark" value="y">
    <br>
 
       <h3>Match</h3>
@@ -64,19 +64,19 @@
         <option value="4 Wheel">Both</option>
       </select><br>
       
-      <label for="Drive">Can Accept Human Player Slide?</label>
-      <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+      <label for="HPS">Can Accept Human Player Slide?</label>
+      <input type="checkbox" id="hps" name="hps" value="y">
    <br>
 
-   <label for="Drive">Can Accept Human Player Ramp?</label>
-      <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+   <label for="HPRA">Can Accept Human Player Ramp?</label>
+      <input type="checkbox" id="hra" name="hra" value="y">
    <br>
 
-   <label for="Team Name">~ Cycle time?</label>
-      <input type="text" id="name" name="name"><br>
+   <label for="Cycle">~ Cycle time?</label>
+      <input type="text" id="name" name="cycle"><br>
 
-      <label for="Drive">Consistent Balance?</label>
-      <input type="checkbox" id="fruit1" name="fruit[]" value="apple">
+      <label for="CanBalance">Consistent Balance?</label>
+      <input type="checkbox" id="canbalance" name="canbalance" value="y">
 
       <br><br>
       <label for="feedback"><h4>Other Info?</h4></label><br>
@@ -110,8 +110,7 @@
         const rows = document.querySelectorAll("form input");
       document.getElementById("myForm").addEventListener("submit", function(event) {
         event.preventDefault();
-        exportTableToCsv(rows[0].value + "-pitscout.csv");
-        console.log(rows[0].value);
+        exportTableToCsv(rows[1].value + "-pitscout.csv");
         
       });
     </script>
