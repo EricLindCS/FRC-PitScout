@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Form to CSV Example</title>
+    
+    <script>
+        function exportToCsv(filename) {
+          var csv = [];
+          var rows = document.querySelectorAll('form > div > input');
+          var num = 2;
+          console.log(rows);
+          console.log(num);
+          for (var i = 0; i < rows.length; i++) {
+            var row = [];
+            row.push(rows[i].id);
+            row.push(rows[i].value);
+            csv.push(row.join(','));
+          }
+          downloadCsv(csv.join('\n'), filename);
+        }
+  
+        function downloadCsv(csv, filename) {
+          var csvFile;
+          var downloadLink;
+  
+          csvFile = new Blob([csv], {type: "text/csv"});
+  
+          downloadLink = document.createElement("a");
+  
+          downloadLink.download = filename;
+  
+          downloadLink.href = window.URL.createObjectURL(csvFile);
+  
+          downloadLink.style.display = "none";
+  
+          document.body.appendChild(downloadLink);
+  
+          downloadLink.click();
+        }
+      </script>
+  </head>
+  <body>
+    <h1>HTML Form to CSV Example</h1>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone"><br>
+      <input type="button" value="Submit" onclick="exportToCsv('results.csv')">
+    </form>
+
+  </body>
+</html>
